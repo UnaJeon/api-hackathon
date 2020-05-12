@@ -1,13 +1,15 @@
 class App{
-  constructor(){
+  constructor(eventsTable){
     this.handleGetEventsError = this.handleGetEventsError.bind(this);
     this.handleGetEventsSuccess = this.handleGetEventsSuccess.bind(this);
+    this.eventsTable = eventsTable
   }
   handleGetEventsError(err) {
     console.error(err);
   }
-  handleGetEventsSuccess(json) {
-    console.log("Success",json);
+  handleGetEventsSuccess(event){
+    //console.log("success",events)
+    this.eventsTable.updateEvents(event);
   }
 getEvents(){
   $.ajax({
