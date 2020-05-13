@@ -21,16 +21,19 @@ class App{
     error: this.handleGetEventsError
   })
 }
-sendMessage(number){
+sendMessage(message){
+  var username = "ACea444de4ea87bf7afc0c73eb7935d06f";
+  var password = "958c01f502889fb0bbc1933255d6dd14";
   $.ajax({
     method: "POST",
-    url: "https://api.twilio.com/2010-04-01/Accounts/{AccountSid}/Messages.json",
-    username: "ACea444de4ea87bf7afc0c73eb7935d06f",
-    password: "958c01f502889fb0bbc1933255d6dd14",
+    url: "https://api.twilio.com/2010-04-01/Accounts/ACea444de4ea87bf7afc0c73eb7935d06f/Messages.json",
     data: {
-      "TO": number,
-      "FROM": "12513060563",
-      "Body": "Howdy",
+      "To": '+17142805279',
+      "From": "+12513060563",
+      "Body": message,
+    },
+      beforeSend: function (xhr) {
+      xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
     },
     success: function(){
       console.log("success");
@@ -40,5 +43,13 @@ sendMessage(number){
 }
 start(){
   this.getEvents();
+  //this.sendMessage('7142805279');
 }
 }
+// Pop a modal when user clicks send a message
+// when user clicks send message
+// unhide modal
+// modal should have text area for message
+// modal should have submit button to send message
+// when modal submit button is clicked
+// sendMessage function is called, and passed users message

@@ -17,17 +17,25 @@ class EventsTable{
      getImg.setAttribute("src", getEvents[i].images[0].url);
      var invite = document.createElement("td");
      var button = document.createElement("button");
-     button.textContent ="Send a Message"
+     button.setAttribute("type","button");
+     button.setAttribute("class","btn btn-primary");
+     button.setAttribute("data-toggle","modal")
+     button.setAttribute("data-target", "#messageModal")
+
+     button.textContent ="Send a Message";
+
+
 
      name.textContent = getEvents[i].name;
      date.textContent = getEvents[i].dates.start.localDate;
      link.textContent = getEvents[i].url;
     // img.textContent = getEvents[i].images[0].url;
-     img.append(getImg);
 
+     img.append(getImg);
      tr.append(name,date,link,img,invite);
      invite.append(button);
      tbody.append(tr);
+
    }
   }
 }
