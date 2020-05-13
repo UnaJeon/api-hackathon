@@ -2,6 +2,7 @@ class App{
   constructor(eventsTable){
     this.handleGetEventsError = this.handleGetEventsError.bind(this);
     this.handleGetEventsSuccess = this.handleGetEventsSuccess.bind(this);
+    this.sendMessage = this.sendMessage.bind(this)
     this.eventsTable = eventsTable
   }
   handleGetEventsError(err) {
@@ -21,7 +22,8 @@ class App{
     error: this.handleGetEventsError
   })
 }
-sendMessage(message){
+sendMessage(){
+  var message = document.getElementById("textarea").value;
   var username = "ACea444de4ea87bf7afc0c73eb7935d06f";
   var password = "958c01f502889fb0bbc1933255d6dd14";
   $.ajax({
@@ -40,9 +42,12 @@ sendMessage(message){
     },
     error: this.handleGetEventsError
   })
+
 }
 start(){
+  this.eventsTable.onSendMessage(this.sendMessage)
   this.getEvents();
+
   //this.sendMessage('7142805279');
 }
 }

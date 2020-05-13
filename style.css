@@ -3,16 +3,39 @@ img{
   height: 200px;
   border-radius: 10%;
 }
-/*body{
-  background-image: url(./img/LA\ background.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-}*/
-.row1{
+body{
+  font-family: 'Old Standard TT', serif;
+  width:100%;
 
-background-image: url(./img/LA\ background.jpg);
-height: 200px;
+}
+.row1{
+background-image: url(./img/palmtree.jpg);
+height: 300px;
+width:100%;
 background-repeat: no-repeat;
 background-position: center;
 background-size: cover;
+}
+header{
+  width: 100%;
+  text-align: center;
+  align-self: center;
+}
+h2{
+  color:brown;
+}
+.table tr th:nth-child(1) {
+    width: 8%;  /*Custom your width*/
+ }
+ .table tr th:nth-child(4){
+   width: 30%;
+ }
+button{
+  align-content: center;
+}
+.table td{
+  text-align: center;
+}
+.table th{
+  text-align: center;
 }
