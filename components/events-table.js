@@ -1,6 +1,10 @@
 class EventsTable{
   constructor(tableElement){
-    this.tableElement = tableElement
+    this.tableElement = tableElement;
+    this.sendMessage = null;
+  }
+  onSendMessage(cb) {
+    this.sendMessage = cb;
   }
   updateEvents(event){
     //console.log(event)
@@ -14,28 +18,40 @@ class EventsTable{
      var link = document.createElement("td");
      var img  = document.createElement("td");
      var getImg =document.createElement("img");
+
      getImg.setAttribute("src", getEvents[i].images[0].url);
+
      var invite = document.createElement("td");
      var button = document.createElement("button");
+
      button.setAttribute("type","button");
-     button.setAttribute("class","btn btn-primary");
+     button.setAttribute("class","btn btn-outline-success");
      button.setAttribute("data-toggle","modal")
      button.setAttribute("data-target", "#messageModal")
 
      button.textContent ="Send a Message";
-
-
-
      name.textContent = getEvents[i].name;
      date.textContent = getEvents[i].dates.start.localDate;
-     link.textContent = getEvents[i].url;
+     var a = document.createElement("a")
+     a.textContent = "For More Info"
+     a.href = getEvents[i].url;
+
+
     // img.textContent = getEvents[i].images[0].url;
 
      img.append(getImg);
      tr.append(name,date,link,img,invite);
+     link.append(a);
      invite.append(button);
      tbody.append(tr);
 
-   }
+
+     var modalSubmitButton = document.getElementById("modalSubmitButton");
+     //console.log(modalSubmitButton);
+     modalSubmitButton.addEventListener("click",this.sendMessage);
+    // document.querySelector('button.close').click()
+     //document.querySelector('.send-message').click();
   }
+  }
+
 }
