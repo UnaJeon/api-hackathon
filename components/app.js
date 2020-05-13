@@ -24,11 +24,11 @@ class App{
 }
 sendMessage(){
   var message = document.getElementById("textarea").value;
-  var username = "ACea444de4ea87bf7afc0c73eb7935d06f";
+  var username = "fc247190fc7c5dec0cb367b41d9f7af6";
   var password = "958c01f502889fb0bbc1933255d6dd14";
   $.ajax({
     method: "POST",
-    url: "https://api.twilio.com/2010-04-01/Accounts/ACea444de4ea87bf7afc0c73eb7935d06f/Messages.json",
+    url: "https://api.twilio.com/2010-04-01/Accounts/fc247190fc7c5dec0cb367b41d9f7af6/Messages.json",
     data: {
       "To": '+17142805279',
       "From": "+12513060563",
