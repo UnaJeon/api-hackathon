@@ -18,7 +18,7 @@ class EventsTable{
      var link = document.createElement("td");
      var img  = document.createElement("td");
      var getImg =document.createElement("img");
-
+     getImg.setAttribute("class","eventImg");
      getImg.setAttribute("src", getEvents[i].images[0].url);
 
      var invite = document.createElement("td");
@@ -49,8 +49,15 @@ class EventsTable{
      var modalSubmitButton = document.getElementById("modalSubmitButton");
      //console.log(modalSubmitButton);
      modalSubmitButton.addEventListener("click",this.sendMessage);
-    // document.querySelector('button.close').click()
-     //document.querySelector('.send-message').click();
+    // var messageBox = document.getElementById("textarea");
+    // messageBox.value = '';
+    $('#messageModal').on('hidden.bs.modal', function (e) {
+      $(this)
+        .find("textarea")
+        .val('')
+        .end()
+    })
+
   }
   }
 
