@@ -60,6 +60,6 @@ start(){
   this.getEvents();
   this.getNyEvents();
 
-  //this.sendMessage('7142805279');
+  //this.sendMessage('');
 }
 }

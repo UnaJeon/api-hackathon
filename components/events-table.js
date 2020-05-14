@@ -57,6 +57,7 @@ class EventsTable{
         .val('')
         .end()
     })
+
   }
   }
 

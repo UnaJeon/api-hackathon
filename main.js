@@ -10,6 +10,7 @@ $(document).ready(initializeApp);
 function initializeApp(){
   $(".container").hide();
   $(".secondContainer").hide();
+  $(".homeIcon").click(handleHome);
 }
 $(document).ready(function(){
   $("#la_button").click(function(){
@@ -23,6 +24,13 @@ $(document).ready(function(){
     $(".container").hide();
   })
 });
+
+function handleHome(){
+  $(".homeIcon").click(function(){
+    $(".landingPage").show()
+    $(".container").hide();
+  })
+}
 
 
 //
